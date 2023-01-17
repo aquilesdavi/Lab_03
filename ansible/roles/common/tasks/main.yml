@@ -1,0 +1,28 @@
+---
+- name: Update Cache #equivalente a apt update
+  apt:
+    update_cache: yes
+
+- name: Instalando pacotes essenciais #Instalando pacotes usuando apt
+  apt:
+    name:
+      - vim
+      - curl
+      - telnet
+      - unzip
+      - wget
+      - net-tools
+      - htop
+      - nmap
+    state: present
+
+- name: Adicionar usuario #Criando usuario 
+  user: 
+    name: aquiles
+    shell: /bin/bash  
+
+- name: Set a hostname #troca nome da maquina
+  hostname:
+    name: aquiles
+
+ 

@@ -1,0 +1,8 @@
+---
+- name: Install nginx #equivalente a apt install nginx
+  apt:
+    name: nginx
+- name: copy index.html #copia arquivo html
+  copy:
+    src: site.html
+    dest: /var/www/html 
